@@ -1,0 +1,30 @@
+apply plugin: 'android-library'
+apply plugin: 'maven'
+
+group = GROUP
+archivesBaseName = 'android-numberpicker'
+version = VERSION
+
+android {
+  compileSdkVersion 19
+  buildToolsVersion '19.1.0'
+
+  sourceSets {
+    main {
+      manifest.srcFile 'AndroidManifest.xml'
+      java.srcDirs = ['src']
+      res.srcDirs = ['res']
+    }
+  }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+		repository(url: "file:maven-repository/")
+			pom.groupId = GROUP
+			pom.artifactId = ARTIFACT_ID
+			pom.version = VERSION
+        }
+    }
+}

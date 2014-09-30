@@ -1,0 +1,3 @@
+include 'android-numberpicker'
+
+project(':android-numberpicker').projectDir = new File(settingsDir, 'library')
